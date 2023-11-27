@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number</title>
+</head>
+<body>
+    <h2>Number</h2>
+    - Number merupakan function yang digunakan untuk melakukan konversi ke tipe data number <br>
+    - Jika data tidak bisa dikonversi ke number, secara otomatis hasilnya adalah NaN <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Objects/Number
+
+    <h2>Number Static Properties</h2>
+    - Number memiliki banyak static properties, seperti: <br>
+    - Number.MIN VALUE untuk mendapat number minimal <br>
+    - Number.MAX VALUE untuk mendapat number maksimal <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Obiects/Number#st
+    atic properties
+
+    <h2>Number Static Method</h2>
+    - Number memiliki banyak static method, seperti: <br>
+    - Number.is NaN(value) untuk mengecek apakah value NaN atau bukan <br>
+    - Number.isInteger(value) untuk mengecek apakah value berupa integer atau bukan <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Obiects/Number#st
+    atic methods
+
+    <h2>Number Instance Method</h2>
+    - Number memiliki banyak instance method, seperti: <br>
+    - Number.toLocalString(locale) untuk mengubah number menjadi string sesuai locale : <br>
+    https://www.lansweeper.com/knowledgebase/list-of-currency-culture-codes/ <br>
+    - Number.toString(radix) untuk mengubah number meniadi string sesuai radix <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Objects/Number#in
+    stance methods
+</body>
+
+<script>
+    const value = "123";
+    const number = Number(value);
+    console.log(number);
+
+    const notNumberValue = "123abc";
+    const nan = Number(notNumberValue);
+    console.log(Number(nan)); // NaN
+
+    // Number static properties
+    console.log(Number.MIN_VALUE);
+    console.log(Number.MAX_VALUE);
+    console.log(Number.MIN_SAFE_INTEGER);
+    console.log(Number.MAX_SAFE_INTEGER);
+    console.log(Number.NaN);
+
+    // Number static method
+    console.log(Number.isInteger(number));
+    console.log(Number.isNaN(nan));
+
+    const values = Number(12345);
+    console.log(values.toString(2)); // to binary
+    console.log(values.toLocaleString("id-ID")); // to indonesia format 12.345
+    console.log(values.toLocaleString("id-ID")); // to US format 12,345
+</script>
+</html>

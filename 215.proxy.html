@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy</title>
+</head>
+<body>
+    <h2>Proxy</h2>
+    - Proxy merupakan fitur yang bisa digunakan sebagai wakil sebuah data <br>
+    - Dengan menggunakan proxy, semua interaksi ke data akan selalu melalui Proxy terlebih dahulu <br>
+    - Dengan ini, kita bisa melakukan apapun sebelum interaksi dilakukan ke data yang dituju <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Obiects/Proxy
+
+    <h2>Proxy Handler</h2>
+    - Pembuatan Proxy perlu menggunakan handler, dimana dalam handler, kita bisa membuat function
+    yang dinamakan interceptor yang digunakan ketika mengambil data tau mengubah data ke target <br>
+    - Untuk membuat Proxy, kita bisa menggunakan new Proxy(target, handler)
+
+    <h2>Proxy dan Handler</h2>
+    - Saat kita mengubah data proxy, secara otomatis data akan dikirim ke target melalui handler
+    dengan memanggil function set(target, property, value) <br>
+    - Saat kita mengambil data proxy, secara otomatis data akan diambil dari target melalui handler
+    dengan memanggil function get(target, property) <br>
+    - Artinya, jika kita ingin melakukan sesuatu sebelum dan setelah nya, bisa kita lakukan di handler
+</body>
+<script>
+    const target = {};
+
+    const handler = {
+        get : function(target, property) {
+            // proxy dan handler
+            console.log(`Mengakses property ${property}`);
+            // end proxy dan handler
+            return target[property];
+        },
+        set : function(target, property, value) {
+            // proxy dan handler
+            console.log(`Mengubah property ${property} dengan value ${value}`);
+            // end proxy dan handler
+            target[property] = value;
+        }
+    };
+
+    const proxy = new Proxy(target, handler);
+
+    // maka jika ingin melakukan perubahan ke target, jangan langsung ke targetnya tapi harus ke proxynya
+
+    proxy.firstName = "Adi";
+    proxy.lastName = "Hidayat";
+
+    console.log(proxy.firstName);
+    console.log(proxy.lastName);
+</script>
+</html>

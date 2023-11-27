@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eval</title>
+</head>
+<body>
+    <h2>Eval</h2>
+    - Eval merupakan function yang digunakan untuk mengeksekusi kode JavaScript dari String <br>
+    - Fitur ini sangat menarik, namun perlu hati-hati ketika menggunakannya <br>
+    - Jika sampai salah penggunaan, maka bisa jadi kita malah mengeksekusi kode program yang bisa
+    menyebabkan masalah keamanan di website kita <br>
+    - Pada kenyataanya eval jarang digunakan dan direkomendasikan untuk tidak digunakan <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Objects/eval
+</body>
+<script>
+    const string = "alert('anda di hack')";
+    eval(string);
+
+    const jumlahkan = 'alert(1 + 1)';
+    eval(jumlahkan);
+</script>
+</html>

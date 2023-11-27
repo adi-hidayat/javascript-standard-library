@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encode</title>
+</head>
+<body>
+    <h2>Encode</h2>
+    - Saat kita menulis URL, kadang kita ingin menambahkan informasi tambahan seperti query
+    parameter misalnya <br>
+    - URL sendiri sudah memiliki standard encoding penulisan URL <br>
+    - Standard encoding ini dilakukan agar penulisan URL aman ketika diterima oleh server <br>
+    - Aman disini dalam artian informasi URL tidak berubah <br>
+    - Contoh paling sederhana, misal, walaupun kita bisa mengirim spasi dalam url, tapi disarankan
+    untuk di encode agar nilai spasi tidak benar-benar terlihat seperti spasi pada URL nya
+
+    <h2>Contoh Masalah jika tidak menggunakan encode</h2>
+    - Misal ada query parameter dengan nama data, lalu kita ingin mengirimkan nilai kesana <br>
+    - Misal nilainya adalah &eko=eko&, alhasil URL nya akan seperti berikut <br>
+    http://contoh.com?data=&adi=adi& <br>
+    - URL diatas terlihat tidak ada masalah, tapi sebenarnya ketika diterima oleh server, parameter data
+    bernilai kosong, kenapa? karena & dianggap sebagai pemisah antar parameter <br>
+    - Artinya tanda seperti & dan lain-lain perlu di encode, agar tidak terjadi kesalahan data yang kita
+    kirim
+
+    <h2>Encode Function</h2>
+    - encodeURI(value) = Melakukan encode value, namun karakter yang dipesan di URI tidak akan diubah
+    ;,?:@&=+$# <br>
+    - encodeURIComponent(value) = Melakukan encode value semua karakter
+    - decodeURI(encoded) = Melakukan decod value hasil encodeURI()
+    - decodeURIComponent(encoded) = melakukan decode value hasil encodeURIComponent()
+</body>
+
+<script>
+    const url = 'http://www.adihidayat.web.id?name=Adi Hidayat';
+    console.log(url);
+
+    const encoded = encodeURI(url);
+    console.log(encoded);
+
+    const decoded = decodeURI(encoded);
+    console.log(decoded);
+    {
+        const value = "Adi&Hidayat=Ganteng";
+        const url = 'http://ganteng.com/';
+        const encoded = encodeURIComponent(value);
+        console.log(url + encoded);
+        const  decoded = decodeURIComponent(encoded);
+        console.log(url + decoded);
+    }
+
+
+</script>
+
+</html>

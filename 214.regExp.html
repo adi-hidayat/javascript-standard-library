@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expression</title>
+</head>
+<body>
+    <h2>Regular Expression</h2>
+    - RegExp merupakan implementasi dari regular expression di JavaScript <br>
+    - Regular expression merupakan fitur untuk mencari text dengan pola <br>
+    - Membuat regular expression di JavaScript bisa dilakukan dengan dua cara, yaitu menggunakan
+    literal notation atau membuat object RegExp <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/GlobalObjects/RegExp
+
+    <h2>RegExp Instance Method</h2>
+    - exec(value) : result = eksekusi regex, jika menemukan data sesuai pola, maka kembalikan resultnya. jika tidak maka null <br>
+    - test(value) : boolean = eksekusi regex, jika menemukan data sesuai pola maka return true jika tidak return false
+
+    <h2>Regex Modifier</h2>
+    RegExp memiliki modifier untuk mengubah sifat cara pencarian <br>
+    - i = Regex menjadi case sensitive <br>
+    - g = Pencarian dilakukan secara global, secara default setelah menemukan data, pencarian akan berhenti <br>
+    - m = Multiline, pencarian dilakukan di tiap baris (enter)
+</body>
+<script>
+  {
+    // membuat regex
+    const regex1 = /[a]/;
+    const regex2 = new RegExp("[a]");
+    const regex3 = new RegExp(/[a]/);
+    console.log(regex1);
+    console.log(regex2);
+    console.log(regex3);
+
+  }
+
+  {
+    // test regex
+    const name = "Hidayat AdiHidayat";
+    const regex = /Adi/;
+    const result = regex.exec(name);
+    console.log(result);
+    console.log(regex.test(name))
+    console.log(regex.exec("Kata Kotor"))
+    console.log(regex.test("Kata Kotor"))
+
+  }
+
+  {
+      // regex modifier
+      const words = "namaku adi\n hidayat adi";
+      const regex1 = /adi/g;
+      const regex2 = /hidayat/ig;
+
+    console.log(regex1.exec(words));
+    console.log(regex2.exec(words));
+  }
+</script>
+</html>

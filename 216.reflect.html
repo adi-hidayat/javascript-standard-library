@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect</title>
+</head>
+<body>
+    <h2>Reflect</h2>
+    - Reflect merupakan class yang digunakan untuk mengeksekusi JavaScript function <br>
+    - Reflect tidak memiliki constructor, dan cara penggunaan Reflect tidak dengan membuat object
+    dengan new Reflect <br>
+    - Penggunaan Reflect adalah menggunakan banyak sekali static methodnya <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+</body>
+
+<script>
+    const product = {};
+    Reflect.set(product, 'name', 'Bakso');
+    Reflect.set(product, 'price', 25000);
+
+    console.log(product);
+    console.log(Reflect.has(product, 'name'));
+    console.log(Reflect.has(product, 'price'));
+</script>
+</html>

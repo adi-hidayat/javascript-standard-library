@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+</head>
+<body>
+    <h2>Map</h2>
+    - Map merupakan representasi dari struktur data key-value <br>
+    - Map mirip dengan tipe data object, hanya saja pada Map, semua method untuk manipulasi data
+    sudah disediakan <br>
+    - Map mengikuti kontrak iterable, sehingga bisa di iterasi secara default <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Objects/Map
+    <h2>Perbedaan Map dan Object</h2>
+    Map != Object <br>
+    - Pertama dibuat, tidak memiliki Key != Karena memiliki prototype, jadi bisa memiliki default key ketika pertama dibuat <br>
+    - Key bisa tipe data apapun != Key hanya bisa string atau symbol <br>
+    - Jumlah key bisa diketahui dengan mudah dengan attribute size != tidak bisa diketahui, harus manual dengan iterasi <br>
+    - Secara default tidak bisa di konversi ke json != Bisa dikonversi ke json secara otomatis
+
+    <h2>Maps Instance Method dan Properti</h2>
+    - size = Panjang Map <br>
+    - clear() = Menghapus semua isi Map
+    - delete(key) = Menghapus data Map berdasarkan key
+    - get(key) : value = Mendapatkan data map berdasarkan key
+    - has(key) : boolean = Mengecek apakah Map berisi data key
+    - set(key, value) = Mengubah data map dengan key = value
+    - forEach((key, value) => ) = Melakukan iterasi map
+</body>
+<script>
+    const map = new Map();
+    map.set("Name", "Adi Hidayat");
+    map.set("Address", "Indonesia");
+
+    console.log(map);
+    console.log(map.get("Name"));
+    console.log(map.get("Address"));
+
+    for (const element of map) {
+      console.log(`${element[0]} : ${element[1]}`);
+    }
+
+    map.forEach((value, key) => console.log(`${key} : ${value}`));
+</script>
+</html>

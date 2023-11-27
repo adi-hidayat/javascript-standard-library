@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+    <h2>Object</h2>
+    - Tipe data object sudah sering sekali kita bahas di JavaScript Dasar dan JavaScript OOP <br>
+    - Pada materi ini, kita akan bahas banyak static method yang terdapat pada Object <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global Obiects/Object
+
+    <h2>Object Freeze & Seal</h2>
+    - Secara default, object bisa diubah atau dihapus properties nya <br>
+    - Jika kita ingin mengubah sebuah object menjadi object yang tidak bisa diubah atau dihapus, kita
+    bisa menggunakan beberapa static method <br>
+    - Object.freeze() digunakan untuk mengubah object menjadi object yang tidak bisa diubah atau
+    dihapus attribute nya <br>
+    - Object.seal() digunakan untuk mengubah object menjadi object yang tidak bisa dihapus attribute
+    пуа
+
+    <h2>Object Assign</h2>
+    - Kadang kita ada kasus menggabungkan semua attribute dari sebuah object ke object lain <br>
+    - Hal ini bisa kita lakukan dengan menggunakan Object.assign(target, source)
+
+    <h2>Object Property Name & Value</h2>
+    - Object juga memiliki static method untuk digunakan mengambil semua properties names dan
+    values # <br>
+    - Object.values() digunakan untuk mengambil semua property value <br>
+    - Object.getPropertyNames() digunakan untuk mengambil semua properti name
+    <br>
+    Note : explore sendiri untuk object static method
+</body>
+<script>
+    // object freeze dan seal
+    class Product
+    {
+        constructor(name, price) {
+            this.name = name;
+            this.price = price
+        }
+    }
+
+    const product = new Product("Indomie", 3000);
+    console.log(product);
+    Object.freeze(product);
+    product.name = "Popmie"; // tidak akan berubah
+    console.log(product);
+    delete product.name; // tidak akan terhapus
+    console.log(product);
+    // end object freeze dan seal
+
+    // object assign
+    class Cart {
+        // constructor(name, price) {
+        //     this.name = name;
+        //     this.price = price;
+        // }
+    }
+
+    const cart = new Cart();
+    console.log("Object assign from product to cart")
+    Object.assign(cart, product);
+    console.log(cart);
+    // end object assign
+
+    // object property name & value
+    console.log(Object.getOwnPropertyNames(product));
+    console.log(Object.values(product));
+    // end object property name & value
+
+</script>
+</html>

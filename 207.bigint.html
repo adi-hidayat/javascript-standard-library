@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BigInt</title>
+</head>
+<body>
+    <h2>BigInt</h2>
+    - Bigint merupakan tie data Number yang bisa mencakup data angka lebih dari <br>
+    - Number.MAX SAFE INTEGER <br>
+    - Untuk kasus number yang lebih dari itu, sangat disarankan menggunakan tipe data Biglnt <br>
+    - Cara penggunaan Biglnt sama saja dengan penggunaan Number dan juga operator nya <br>
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Obiects/BigInt
+</body>
+<script>
+    const a = BigInt(Number.MAX_SAFE_INTEGER);
+    const b = BigInt(Number.MAX_SAFE_INTEGER);
+
+    const c = a + b;
+
+    console.log(c);
+    console.log(typeof c);
+</script>
+</html>
